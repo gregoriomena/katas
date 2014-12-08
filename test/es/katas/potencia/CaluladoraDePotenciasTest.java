@@ -10,8 +10,8 @@ public class CaluladoraDePotenciasTest {
 	 * TODO
 	 * - 2^3 = 2*2*2
 	 * - 2*2 = 2+2			<- OK
-	 * - 0*2 = 0			<-		
-	 * - 2*0 = 0			
+	 * - 0*2 = 0			<- OK
+	 * - 2*0 = 0			<-	
 	 * - 4*3 = 4+4+4
 	 * - 2^3 = 2*2*2
 	 * - 3^4 = 3*3*3*3
@@ -26,9 +26,14 @@ public class CaluladoraDePotenciasTest {
 	multiplicar_cero_por_cualquier_cosa_devuelve_cero() {
 		assertEquals(0, multiplicar(0, 2));
 	}
+	
+	@Test public void
+	multiplicar_cualquier_cosa_por_cero_devuelve_cero() {
+		assertEquals(0, multiplicar(2, 0));
+	}
 
 	private int multiplicar(int i, int j) {
-		if (i == 0){
+		if (i == 0 || j == 0){
 			return 0;
 		}
 
