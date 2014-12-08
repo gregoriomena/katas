@@ -11,8 +11,8 @@ public class CaluladoraDePotenciasTest {
 	 * - 2^3 = 2*2*2
 	 * - 2*2 = 2+2			<- OK
 	 * - 0*2 = 0			<- OK
-	 * - 2*0 = 0			<-	
-	 * - 4*3 = 4+4+4
+	 * - 2*0 = 0			<- OK
+	 * - 4*3 = 4+4+4		<-
 	 * - 2^3 = 2*2*2
 	 * - 3^4 = 3*3*3*3
 	 */
@@ -20,6 +20,7 @@ public class CaluladoraDePotenciasTest {
 	@Test public void
 	multiplicar_es_sumar_el_multiplicando_a_si_mismo_tantas_veces_diga_multiplicador() {
 		assertEquals(4, multiplicar(2, 2));
+		assertEquals(12, multiplicar(4, 3));
 	}
 	
 	@Test public void
