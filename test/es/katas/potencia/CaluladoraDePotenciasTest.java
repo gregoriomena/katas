@@ -1,6 +1,8 @@
 package es.katas.potencia;
 
 import static org.junit.Assert.*;
+import static es.katas.potencia.Multiplicador.*;
+import static es.katas.potencia.CalculadoraDePotencias.*;
 
 import org.junit.Test;
 
@@ -54,31 +56,6 @@ public class CaluladoraDePotenciasTest {
 	elevar_es_multiplicar_el_primer_parametro_por_si_mismo_tantas_veces_diga_el_segundo() {
 		assertEquals(8, elevar(2, 3));
 		assertEquals(81, elevar(3, 4));
-	}
-
-	private int elevar(int a, int n) {
-		if (n == 0){
-			return 1;
-		}
-		else if (n == 1){
-			return a;
-		}
-		return a * a * elevar(a, n - 2);
-	}
-
-	private int multiplicar(int multiplicando, int multiplicador) {
-		if (multiplicando == 0 || multiplicador == 0){
-			return 0;
-		}
-		if (multiplicando == 1){
-			return multiplicador;
-		}
-		if (multiplicador == 1){
-			return multiplicando;
-		}
-
-		int resto = multiplicar(multiplicando, multiplicador - 2);
-		return multiplicando + multiplicando + resto;
 	}
 }
 
