@@ -8,6 +8,7 @@ public class CaluladoraDePotenciasTest {
 
 	/*
 	 * TODO
+	 * - 3^0 = 1			<-
 	 * - 2^3 = 2*2*2
 	 * - 2*2 = 2+2			<- OK
 	 * - 0*2 = 0			<- OK
@@ -37,6 +38,15 @@ public class CaluladoraDePotenciasTest {
 	@Test public void
 	multiplicar_cualquier_cosa_por_cero_devuelve_cero() {
 		assertEquals(0, multiplicar(2, 0));
+	}
+	
+	@Test public void
+	cualquier_numero_elevado_a_cero_devuelve_uno() {
+		assertEquals(1, elevar(2, 0));
+	}
+
+	private int elevar(int a, int n) {
+		return 1;
 	}
 
 	private int multiplicar(int multiplicando, int multiplicador) {
