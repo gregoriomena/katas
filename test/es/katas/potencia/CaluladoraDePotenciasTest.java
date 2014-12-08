@@ -12,8 +12,8 @@ public class CaluladoraDePotenciasTest {
 	 * - 2*2 = 2+2			<- OK
 	 * - 0*2 = 0			<- OK
 	 * - 2*0 = 0			<- OK
-	 * - 4*3 = 4+4+4		<- PENDIENTE
-	 * - 5*1 = 5			<-
+	 * - 4*3 = 4+4+4		<- OK
+	 * - 5*1 = 5			<- OK
 	 * - 2^3 = 2*2*2
 	 * - 3^4 = 3*3*3*3
 	 */
@@ -43,8 +43,15 @@ public class CaluladoraDePotenciasTest {
 		if (multiplicando == 0 || multiplicador == 0){
 			return 0;
 		}
+		if (multiplicando == 1){
+			return multiplicador;
+		}
+		if (multiplicador == 1){
+			return multiplicando;
+		}
 
-		return 2+2;
+		int resto = multiplicar(multiplicando, multiplicador - 2);
+		return multiplicando + multiplicando + resto;
 	}
 }
 
