@@ -32,8 +32,8 @@ public class CaluladoraDePotenciasTest {
 		assertEquals(0, multiplicar(2, 0));
 	}
 
-	private int multiplicar(int i, int j) {
-		if (i == 0 || j == 0){
+	private int multiplicar(int multiplicando, int multiplicador) {
+		if (multiplicando == 0 || multiplicador == 0){
 			return 0;
 		}
 
