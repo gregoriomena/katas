@@ -8,15 +8,15 @@ public class CaluladoraDePotenciasTest {
 
 	/*
 	 * TODO
-	 * - 3^0 = 1			<-
-	 * - 2^3 = 2*2*2
+	 * - 3^0 = 1			<- OK
+	 * - 2^1 = 2			<- OK
+	 * - 2^3 = 2*2*2		<- OK
 	 * - 2*2 = 2+2			<- OK
 	 * - 0*2 = 0			<- OK
 	 * - 2*0 = 0			<- OK
 	 * - 4*3 = 4+4+4		<- OK
 	 * - 5*1 = 5			<- OK
-	 * - 2^3 = 2*2*2
-	 * - 3^4 = 3*3*3*3
+	 * - 3^4 = 3*3*3*3		<-
 	 */
 	
 	@Test public void
@@ -44,9 +44,26 @@ public class CaluladoraDePotenciasTest {
 	cualquier_numero_elevado_a_cero_devuelve_uno() {
 		assertEquals(1, elevar(2, 0));
 	}
+	
+	@Test public void
+	cualquier_numero_elevado_a_uno_devuelve_ese_numero() {
+		assertEquals(2, elevar(2, 1));
+	}
+	
+	@Test public void
+	elevar_es_multiplicar_el_primer_parametro_por_si_mismo_tantas_veces_diga_el_segundo() {
+		assertEquals(8, elevar(2, 3));
+		assertEquals(81, elevar(3, 4));
+	}
 
 	private int elevar(int a, int n) {
-		return 1;
+		if (n == 0){
+			return 1;
+		}
+		else if (n == 1){
+			return a;
+		}
+		return a * a * elevar(a, n - 2);
 	}
 
 	private int multiplicar(int multiplicando, int multiplicador) {
