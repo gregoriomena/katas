@@ -12,7 +12,8 @@ public class CaluladoraDePotenciasTest {
 	 * - 2*2 = 2+2			<- OK
 	 * - 0*2 = 0			<- OK
 	 * - 2*0 = 0			<- OK
-	 * - 4*3 = 4+4+4		<-
+	 * - 4*3 = 4+4+4		<- PENDIENTE
+	 * - 5*1 = 5			<-
 	 * - 2^3 = 2*2*2
 	 * - 3^4 = 3*3*3*3
 	 */
@@ -26,6 +27,11 @@ public class CaluladoraDePotenciasTest {
 	@Test public void
 	multiplicar_cero_por_cualquier_cosa_devuelve_cero() {
 		assertEquals(0, multiplicar(0, 2));
+	}
+	
+	@Test public void
+	multiplicar_uno_por_cualquier_numero_devuelve_se_numero() {
+		assertEquals(5, multiplicar(5, 1));
 	}
 	
 	@Test public void
